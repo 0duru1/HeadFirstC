@@ -2,9 +2,9 @@
 
 void encrypt(char *message)
 {
-	char c;
+	int key = 31;
 	while (*message) {
-		*message = *message ^ 31;
+		*message = *message ^ key;
 		message++;
 	}
 }
