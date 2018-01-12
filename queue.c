@@ -15,7 +15,6 @@ typedef struct Queue {
 void init(Queue *q, int item)
 {
   printf("init queue \n");
-  
   q->front = q->element;
   q->rear = &q->element[1];
   *q->front = item;
@@ -30,7 +29,6 @@ void error(char *msg)
  fprintf(stderr, "%s\n", msg);
  exit(1);
 }
-
 
 
 int is_full(Queue *q)
@@ -53,7 +51,6 @@ void enque(Queue *q, int item)
     int pos = ((q->rear)-(q->element));
     q->rear = &q->element[(pos+1)%MAX_ELEM];
     q->qry = q->qry + 1;
-    
   }
 }
 
@@ -67,7 +64,6 @@ int deque(Queue *q)
 {
   if(q->front > q->rear)
     error("queue empty");
-    
     int pos = (q->front)-(q->element);
     int pop = q->element[(pos)%MAX_ELEM];
     q->front = &q->element[(pos+1)%MAX_ELEM]; 
