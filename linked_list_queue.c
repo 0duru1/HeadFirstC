@@ -38,6 +38,20 @@ int is_full(Queue *q)
 
 void enqueue(Queue *q, element item)
 {
+	QueueNode *tmp = (QueueNode*)malloc(sizeof(QueueNode));
+	if(tmp == NULL){
+		err("err");
+	} else {
+		tmp->item = item;
+		tmp->link = NULL;
+		if(is_empty(q)) {
+			q->rear = tmp;
+			q->front = tmp;
+		} else {
+			q->rear->link = tmp;
+			q->rear = tmp;
+		}
+	}
 /*
 	//동적메모리를 할당을 통해 새로운 노드를 만든다.
 	//새로운 노드에 데이타를 저장한다.
@@ -76,6 +90,7 @@ int main()
 	printf("queue create\n");
 	Queue q;
 	init(&q);
-
+	enqueue(&q, 1);
+	enqueue(&q, 2);
 	return 0;
 }
