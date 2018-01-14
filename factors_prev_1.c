@@ -13,14 +13,10 @@ int main()
 
 	//알고리즘 수행 시간 측정
 	start = clock();
-	for(int i = 1; i * i <= factor; i++)
+	for(int i = 1; i <= factor; i++)
 	{
-		if(factor%i == 0) {
+		if(factor%i == 0)
 		 	cnt=cnt+1;
-			if(i*i < factor) {
-				cnt++;
-			}
-		}
 	}
 	finish = clock();
 	//-----------------------
