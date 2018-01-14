@@ -6,8 +6,6 @@ int main()
 {
 	int factor = 1800;
 	int cnt = 0;
-	puts("약수를 구하고 싶은 숫자를 입력하세요");
-	scanf("%d", &factor);
 	printf("%d의  약수의 갯수를 구하여라\n", factor);
 
 	clock_t start, finish;
